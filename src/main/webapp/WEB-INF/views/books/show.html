@@ -5,13 +5,11 @@
     <title>Book</title>
 </head>
 <body>
-
 <p th:text="${'ID - ' + book.getBook_id()}"></p>
 <p th:text="${'Title - ' + book.getTitle()}"></p>
 <p th:text="${'Author - ' + book.getAuthor()}"></p>
 <p th:text="${'Year - ' + book.getYear()}"></p>
 <br/>
-
 <div th:switch="${current_person.getPerson_id()}">
     <form th:case="'1'" th:method="PATCH" th:action="@{/books/{book_id}/set(book_id=${book.getBook_id()})}">
         <p>Book is set to no-one.</p>
@@ -28,10 +26,8 @@
         th:href="@{/people/{person_id}(person_id=${current_person.getPerson_id()})}"/>
         <input type="submit" value="Clear book"/>
     </form>
-
 </div>
 <br/>
-
 <a th:href="@{/books/{book_id}/edit(book_id=${book.getBook_id()})}">Edit book</a>
 <br/>
 <hr/>
